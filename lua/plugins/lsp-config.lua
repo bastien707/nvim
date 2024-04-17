@@ -87,6 +87,12 @@ return {
 
 			lspconfig["astro"].setup({ capabilities = capabilities })
 
+			lspconfig["jdtls"].setup({
+				jdtls = function()
+					return true
+				end,
+			})
+
 			vim.keymap.set("n", "gd", function()
 				vim.lsp.buf.definition()
 			end, opts)
